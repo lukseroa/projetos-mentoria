@@ -29,15 +29,17 @@ class ViewController: UIViewController {
         
         let hour = calendar.component(.hour, from: now)
         
-        let currentDate = getCurrentDate(hour: hour)
+        let minute = calendar.component(.minute, from: now)
+        
+        let currentDate = getCurrentDate(hour: hour, minute: minute)
         
         minhaLabel.text = showMessageFromDate(mensagem: currentDate)
         
     }
 
-    func getCurrentDate(hour:Int) -> HorasDoDia {
+    func getCurrentDate(hour:Int, minute: Int) -> HorasDoDia {
 
-    if hour >= 6 && hour < 12 {
+    if hour >= 6, minute >= 0 && hour < 12, minute <= 59 {
         view.backgroundColor = .blue
         return HorasDoDia.manha
         

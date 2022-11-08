@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class Tela3ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class ThirdViewController: UIViewController {
         
     }
     
-    let mensagem = Mensagens()
+    let mensagem = MensagensTela3()
     
     @IBOutlet weak var msgTela3: UILabel!
     

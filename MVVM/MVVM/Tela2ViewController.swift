@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class Tela2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class SecondViewController: UIViewController {
 
     }
     
-    let mensagem = Mensagens()
+    let mensagem = MensagensTela2()
     
     @IBOutlet weak var segundaMsg: UILabel!
     

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tela1 View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Tela1ViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-746.37681159420299" y="47.544642857142854"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Tela2 View Controller-->
         <scene sceneID="tJJ-p6-mI8">
             <objects>
-                <viewController storyboardIdentifier="SecondVC" id="BQk-nG-e8V" customClass="SecondViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondVC" id="BQk-nG-e8V" customClass="Tela2ViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YB7-h3-m30">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="24.637681159420293" y="47.544642857142854"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Tela3 View Controller-->
         <scene sceneID="dgn-cu-eyD">
             <objects>
-                <viewController storyboardIdentifier="ThirdVC" id="fGn-QX-dlZ" customClass="ThirdViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdVC" id="fGn-QX-dlZ" customClass="Tela3ViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f8h-xo-3qa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

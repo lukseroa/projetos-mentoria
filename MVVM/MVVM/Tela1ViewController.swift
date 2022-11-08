@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Tela1ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
     }
     
-    let mensagem = Mensagens()
+    let mensagem = MensagensTela1()
 
     @IBOutlet weak var mensagemVC: UILabel!
     

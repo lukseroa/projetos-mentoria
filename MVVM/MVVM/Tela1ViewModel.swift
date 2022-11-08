@@ -7,10 +7,8 @@
 
 import Foundation
 
-struct Mensagens {
+struct MensagensTela1 {
     
 let tela1 = "BATATA!"
-let tela2 = "MOLEZA!"
-let tela3 = "FÁCIL!"
     
 }
