@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MensagensTela2 {
+class MensagensTela2 {
     
 let tela2 = "MOLEZA!"
     

@@ -9,6 +9,9 @@ import UIKit
 
 class Tela1ViewController: UIViewController {
 
+    @IBOutlet weak var preencherNome: UITextField!
+    @IBOutlet weak var mensagemVC: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,8 +20,27 @@ class Tela1ViewController: UIViewController {
     }
     
     let mensagem = MensagensTela1()
-
-    @IBOutlet weak var mensagemVC: UILabel!
+    
+    private func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
+        if preencherNome.text != "" {
+            return true
+        } else {
+            preencherNome.placeholder = "Insira o nome"
+            return false
+        }
+    }
+    
+    @IBAction func enviarNome(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goToTela2", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let telaDestino = segue.destination as! Tela2ViewController
+        telaDestino.nomeTela1 = preencherNome.text
+    }
     
 }
 

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct MensagensTela1 {
+class MensagensTela1 {
     
-let tela1 = "BATATA!"
+let tela1 = "Seu nome"
     
 }
