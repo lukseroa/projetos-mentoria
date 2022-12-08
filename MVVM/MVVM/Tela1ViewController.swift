@@ -32,8 +32,11 @@ class Tela1ViewController: UIViewController {
     
     @IBAction func enviarNome(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier: "goToTela2", sender: self)
-        
+        if preencherNome.text == "" {
+            preencherNome.placeholder = "Insira o nome"
+        } else {
+            self.performSegue(withIdentifier: "goToTela2", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

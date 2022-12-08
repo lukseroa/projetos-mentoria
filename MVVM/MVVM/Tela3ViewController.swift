@@ -9,15 +9,40 @@ import UIKit
 
 class Tela3ViewController: UIViewController {
 
+    var dataTela2: String?
+    var nomeTela1: String?
+    
+    @IBOutlet weak var nomeProprio: UILabel!
+    @IBOutlet weak var dataNascimento: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let idade = calcularIdade()
 
-        msgTela3.text = mensagem.tela3
+        nomeProprio.text = nomeTela1
+        dataNascimento.text = idade
         
     }
     
-    let mensagem = MensagensTela3()
+    let now = Date()
     
-    @IBOutlet weak var msgTela3: UILabel!
+    var myFormatte = DateFormatter()
     
+    func calcularIdade () -> String {
+        
+    myFormatte.dateFormat = "dd-MM-yyyy"
+    
+    let calendar = Calendar.current
+    
+    let finalDate : Date = myFormatte.date(from: dataTela2!)!
+    
+    let idade = calendar.dateComponents([.year], from: finalDate, to: now)
+        
+    let dateString = "\(idade.year!)"
+        
+    return dateString
+    }
+ 
 }
