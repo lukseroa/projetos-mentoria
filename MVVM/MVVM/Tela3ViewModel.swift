@@ -7,8 +7,20 @@
 
 import Foundation
 
-class MensagensTela3 {
+class DadosUsuario {
     
-let tela3 = "FÁCIL!"
+    let now = Date()
     
+    var myFormatte = DateFormatter()
+    
+    func calcularIdade (dataInserida: String) -> String {
+        
+    myFormatte.dateFormat = "dd-MM-yyyy"
+    let calendar = Calendar.current
+    let finalDate : Date = myFormatte.date(from: dataInserida)!
+    let idade = calendar.dateComponents([.year], from: finalDate, to: now)
+    let dateString = "\(idade.year!)"
+    return dateString
+    }
+        
 }

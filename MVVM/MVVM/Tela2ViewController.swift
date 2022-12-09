@@ -9,6 +9,8 @@ import UIKit
 
 class Tela2ViewController: UIViewController {
     
+    let modelo2 = ModeloNegocioTela2()
+    
     var nomeTela1: String?
     
     @IBOutlet weak var segundaMsg: UILabel!
@@ -21,10 +23,6 @@ class Tela2ViewController: UIViewController {
         segundaMsg.text = nomeTela1
     }
     
-    let mensagem = MensagensTela2()
-    
-    let dateFormatterGet = DateFormatter()
-    
     private func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
         if dataDeNascimento.text != "" {
             return true
@@ -36,40 +34,24 @@ class Tela2ViewController: UIViewController {
     
     @IBAction func passarData(_ sender: Any) {
         
+        let validatedDate = modelo2.validateDate(dataDeNascimento: dataDeNascimento.text!)
+        
         let alert: UIAlertController = UIAlertController(title: "Alerta", message: "Insira data válida", preferredStyle: .alert)
         
         let action1: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         alert.addAction(action1)
         
-        let validatedDate = validateDate()
-        
         if validatedDate == true {
             self.performSegue(withIdentifier: "goToTela3", sender: self)
         } else {
             self.present(alert, animated: true, completion: nil)
         }
-                
-    }
-    
-
-    func validateDate() -> Bool {
-        
-        dateFormatterGet.dateFormat = "dd-MM-yyyy"
-        
-        let dataInserida = dataDeNascimento.text
-        
-        if dateFormatterGet.date(from: dataInserida!) != nil {
-            return true
-        } else {
-            return false
-        }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let validDate = validateDate()
+        let validDate = modelo2.validateDate(dataDeNascimento: dataDeNascimento.text!)
         
         if validDate == true {
                 
@@ -81,7 +63,9 @@ class Tela2ViewController: UIViewController {
         }
         
     }
-        
     
 }
+
+    
+
 
