@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MensagensTela1 {
+class Tela1ViewModel {
     
 let tela1 = "Seu nome"
     

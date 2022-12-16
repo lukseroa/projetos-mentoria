@@ -9,7 +9,7 @@ import UIKit
 
 class Tela2ViewController: UIViewController {
     
-    let modelo2 = ModeloNegocioTela2()
+    let modelo2 = Tela2ViewModel()
     
     var nomeTela1: String?
     
@@ -34,36 +34,41 @@ class Tela2ViewController: UIViewController {
     
     @IBAction func passarData(_ sender: Any) {
         
-        let validatedDate = modelo2.validateDate(dataDeNascimento: dataDeNascimento.text!)
-        
         let alert: UIAlertController = UIAlertController(title: "Alerta", message: "Insira data válida", preferredStyle: .alert)
+        
+        let alert2: UIAlertController = UIAlertController(title: "Alerta", message: "Preencha data", preferredStyle: .alert)
         
         let action1: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         alert.addAction(action1)
+        alert2.addAction(action1)
+    
+        if let validatedDate = dataDeNascimento.text {
         
-        if validatedDate == true {
+        let dataValida = modelo2.validateDate(dataDeNascimento: validatedDate)
+        
+        if dataValida == true {
             self.performSegue(withIdentifier: "goToTela3", sender: self)
+            
+        } else if dataDeNascimento.text == "" {
+            self.present(alert2, animated: true, completion: nil)
+            
         } else {
             self.present(alert, animated: true, completion: nil)
+        }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let validDate = modelo2.validateDate(dataDeNascimento: dataDeNascimento.text!)
-        
-        if validDate == true {
                 
-        let telaDestino = segue.destination as! Tela3ViewController
+        if let telaDestino = segue.destination as? Tela3ViewController {
+            
         telaDestino.dataTela2 = dataDeNascimento.text
         telaDestino.nomeTela1 = nomeTela1
-        } else {
-            print("fuck")
+            
         }
-        
+
     }
-    
 }
 
     

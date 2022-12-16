@@ -15,22 +15,31 @@ class Tela3ViewController: UIViewController {
     @IBOutlet weak var nomeProprio: UILabel!
     @IBOutlet weak var dataNascimento: UILabel!
     
-    let calculoIdade = DadosUsuario()
-    
+    let calculoIdade = Tela3ViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let calculoIdade = calculoIdade.calcularIdade(dataInserida: dataTela2!)
+        if let dataRecebida = dataTela2 {
         
-        let idade = calculoIdade
+        let calculoIdade = calculoIdade.calcularIdade(dataInserida: dataRecebida)
+        
+            guard let idadeCalculada = calculoIdade else {
+                
+            let alert: UIAlertController = UIAlertController(title: "Alerta", message: "Insira data válida", preferredStyle: .alert)
+                
+            let action1: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel)
+                
+            alert.addAction(action1)
 
-        nomeProprio.text = nomeTela1
-        dataNascimento.text = idade
-        
+           return self.present(alert, animated: true, completion: nil)
+            }
+            
+            let idade = idadeCalculada
+
+            nomeProprio.text = nomeTela1
+            dataNascimento.text = idade
+        }
     }
-    
-   
-    
 }
 

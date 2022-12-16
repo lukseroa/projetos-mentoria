@@ -19,7 +19,7 @@ class Tela1ViewController: UIViewController {
 
     }
     
-    let mensagem = MensagensTela1()
+    let mensagem = Tela1ViewModel()
     
     private func textFieldDidEndEditing(_ textField: UITextField) -> Bool {
         if preencherNome.text != "" {
@@ -44,6 +44,5 @@ class Tela1ViewController: UIViewController {
         let telaDestino = segue.destination as! Tela2ViewController
         telaDestino.nomeTela1 = preencherNome.text
     }
-    
 }
 
