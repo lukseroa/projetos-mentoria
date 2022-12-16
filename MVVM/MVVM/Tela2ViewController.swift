@@ -35,9 +35,7 @@ class Tela2ViewController: UIViewController {
     @IBAction func passarData(_ sender: Any) {
         
         let alert: UIAlertController = UIAlertController(title: "Alerta", message: "Insira data válida", preferredStyle: .alert)
-        
         let alert2: UIAlertController = UIAlertController(title: "Alerta", message: "Preencha data", preferredStyle: .alert)
-        
         let action1: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         alert.addAction(action1)
@@ -45,18 +43,15 @@ class Tela2ViewController: UIViewController {
     
         if let validatedDate = dataDeNascimento.text {
         
-        let dataValida = modelo2.validateDate(dataDeNascimento: validatedDate)
-        
-        if dataValida == true {
-            self.performSegue(withIdentifier: "goToTela3", sender: self)
-            
-        } else if dataDeNascimento.text == "" {
+            if validatedDate.isEmpty {
             self.present(alert2, animated: true, completion: nil)
-            
+        } else if modelo2.validateDate(dataDeNascimento: validatedDate) == true {
+            self.performSegue(withIdentifier: "goToTela3", sender: self)
         } else {
             self.present(alert, animated: true, completion: nil)
         }
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,10 +60,10 @@ class Tela2ViewController: UIViewController {
             
         telaDestino.dataTela2 = dataDeNascimento.text
         telaDestino.nomeTela1 = nomeTela1
-            
         }
 
     }
+    
 }
 
     
