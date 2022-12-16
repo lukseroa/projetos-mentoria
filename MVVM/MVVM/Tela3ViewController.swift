@@ -22,9 +22,7 @@ class Tela3ViewController: UIViewController {
         
         if let dataRecebida = dataTela2 {
         
-        let calculoIdade = calculoIdade.calcularIdade(dataInserida: dataRecebida)
-        
-            guard let idadeCalculada = calculoIdade else {
+            guard let idadeCalculada = calculoIdade.calcularIdade(dataInserida: dataRecebida) else {
                 
             let alert: UIAlertController = UIAlertController(title: "Alerta", message: "Insira data válida", preferredStyle: .alert)
                 
@@ -32,13 +30,11 @@ class Tela3ViewController: UIViewController {
                 
             alert.addAction(action1)
 
-           return self.present(alert, animated: true, completion: nil)
+            return self.present(alert, animated: true, completion: nil)
             }
-            
-            let idade = idadeCalculada
 
             nomeProprio.text = nomeTela1
-            dataNascimento.text = idade
+            dataNascimento.text = idadeCalculada
         }
     }
 }

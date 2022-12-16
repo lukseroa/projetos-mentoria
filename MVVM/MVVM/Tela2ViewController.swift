@@ -10,12 +10,10 @@ import UIKit
 class Tela2ViewController: UIViewController {
     
     let modelo2 = Tela2ViewModel()
-    
     var nomeTela1: String?
     
     @IBOutlet weak var segundaMsg: UILabel!
     @IBOutlet weak var dataDeNascimento: UITextField!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
